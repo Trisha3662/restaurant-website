@@ -1,3 +1,5 @@
+![Restaurant Banner](banner.png)
+
 # 🍽️ Restaurant Website
 
 A fully responsive restaurant website built using **HTML, CSS, and JavaScript**.
