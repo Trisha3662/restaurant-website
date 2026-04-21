@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/reservationstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="reservation-card">
+            <div class="left-side">
+                <img src="https://cdn-icons-png.flaticon.com/512/8293/8293763.png" alt="Restaurant Logo">
+                <h2>Welcome to Our Restaurant</h2>
+                <p>Experience Fine Dining</p>
+                <div class="feature-list">
+                    <div class="feature">
+                        <i class="fas fa-utensils"></i>
+                        <span>Exquisite Menu</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <span>Premium Service</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-concierge-bell"></i>
+                        <span>Professional Staff</span>
+                    </div>
+                    <a href="menu.html" class="menu-btn">View Menu</a>
+
+                    <div class="back-to-home">
+                        <a href="index.html">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <h2>Reserve Your Table</h2>
+                <p>Please fill in your details to make a reservation</p>
+                <form id="reservationForm">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <div class="error-message" id="name-error"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                        <div class="error-message" id="phone-error"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-users"></i>
+                        <select name="guests" required>
+                            <option value="" disabled selected>Number of Guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" name="date" required>
+                        <div class="error-message" id="date-error"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-clock"></i>
+                        <input type="time" name="time" required>
+                        <div class="error-message" id="time-error"></div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit">Reserve Now</button>
+                        <button type="button" class="cancel-btn">Cancel</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="js/reservation.js"></script>
+</body>
+</html>

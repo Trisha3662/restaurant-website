@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4') center/cover no-repeat fixed;
+    padding: 20px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px;
+}
+
+.reservation-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(18, 18, 18, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(255, 136, 0, 0.2),
+                0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.left-side {
+    flex:1;   
+    padding: 50px;
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+    color: white;
+    text-align: center;
+    border-right: 1px solid rgba(255, 136, 0, 0.1);
+}
+
+.left-side img {
+    width: 120px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 10px rgba(255, 136, 0, 0.3));
+}
+
+.left-side h2 {
+    font-size: 32px;
+    color: #FFC107;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.left-side p {
+    color: #999;
+    margin-bottom: 30px;
+}
+.back-to-home {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-to-home a {
+    color: #FFC107;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.back-to-home a:hover {
+    color: #FFD54F;
+    text-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 136, 0, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateX(10px);
+    background: rgba(255, 136, 0, 0.1);
+    border-color: rgba(255, 136, 0, 0.2);
+}
+
+.feature i {
+    color: #FFC107;
+    font-size: 24px;
+}
+
+.feature span {
+    color: #ddd;
+}
+.menu-btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #FFC107;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.menu-btn:hover {
+    background: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 136, 0, 0.3);
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.input-group i.fa-calendar,
+.input-group i.fa-clock {
+    color: #FFC107; 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+}
+
+.right-side {
+    padding: 50px;
+    background: rgba(25, 25, 25, 0.95);
+}
+
+.right-side h2 {
+    color: #FFC107;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.right-side p {
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFC107;
+    font-size: 18px;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px 45px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 136, 0, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #FFC107;
+    box-shadow: 0 0 15px rgba(255, 136, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff8800' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+select option {
+    background: #1a1a1a;
+    color: white;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"] {
+    background: #FFC107;
+    color: #000;
+    box-shadow: 0 5px 15px rgba(255, 136, 0, 0.2);
+}
+
+button[type="submit"]:hover {
+    background: #ff9933;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 136, 0, 0.3);
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 1px solid rgba(255, 136, 0, 0.1);
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 136, 0, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    width: 400px;
+    color: white;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h2 {
+    color: #FFC107;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #999;
+    margin-bottom: 25px;
+}
+
+.modal-content button {
+    background: #FFC107;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .reservation-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .left-side, .right-side {
+        padding: 30px;
+    }
+    
+    .left-side {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 136, 0, 0.1);
+    }
+    
+    .feature:hover {
+        transform: translateX(0);
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: #000;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}

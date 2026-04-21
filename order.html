@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Menu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/order.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        .menu-category {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .menu-category button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background: #ff6600;
+            color: white;
+            border-radius: 5px;
+        }
+        .menu-category button:hover {
+            background: #e55b00;
+        }
+        .menu .item {
+            display: block; 
+            margin: 15px auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 250px;
+        }
+        .menu img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">Home</a>  
+        <a href="menu.html">Menu</a>  
+        <a href="cart.html">Cart</a>
+    </header>
+
+    <div class="menu-category">
+        <button onclick="filterMenu('breakfast')">Breakfast</button>
+        <button onclick="filterMenu('veg')">Veg</button>
+        <button onclick="filterMenu('nonveg')">Non-Veg</button>
+        <button onclick="filterMenu('all')">Show All</button>
+    </div>
+
+    <section class="menu">
+        <div class="item breakfast">
+            <img src="image/Dosa.jpg" alt="Dosa">
+            <h3>Dosa</h3>
+            <p class="price">₹65.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item breakfast">
+            <img src="image/puri.jpeg" alt="Puri">
+            <h3>Puri</h3>
+            <p class="price">₹30.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item breakfast">
+            <img src="image/Upma.jpg" alt="Upma">
+            <h3>Upma</h3>
+            <p class="price">₹50.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item breakfast">
+            <img src="image/vada.webp" alt="Vada">
+            <h3>Vada</h3>
+            <p class="price">₹30.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item breakfast">
+            <img src="image/Ragi Dosa.webp" alt="Ragi Dosa">
+            <h3>Ragi Dosa</h3>
+            <p class="price">₹70.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item breakfast">
+            <img src="image/podi idly.jpg" alt="podi idly">
+            <h3>podi idly</h3>
+            <p class="price">₹30.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item breakfast">
+            <img src="image/pooha.jpg" alt="pooha">
+            <h3>pooha</h3>
+            <p class="price">₹25.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item breakfast">
+            <img src="image/Bread pakoda.jpg" alt="Bread pakoda">
+            <h3>Bread pakoda</h3>
+            <p class="price">₹60.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item breakfast">
+            <img src="image/Vada pav.jpg" alt="Vada pav">
+            <h3>Vada pav</h3>
+            <p class="price">₹40.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/paratha.avif" alt="Paratha">
+            <h3>Paratha</h3>
+            <p class="price">₹15.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/Mushroom Biriyani.jpeg.jpg" alt="Mushroom Biriyani">
+            <h3>Mushroom Biriyani</h3>
+            <p class="price">₹180.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/Panner fry.jpeg" alt="Panner fry">
+            <h3>Panner fry</h3>
+            <p class="price">₹100.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/Mater Mushroom.jpeg" alt="Mater Mushroom">
+            <h3>Mater Mushroom</h3>
+            <p class="price">₹90.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/paneer-curry.jpg" alt="paneer-curry">
+            <h3>paneer-curry</h3>
+            <p class="price">₹85.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/vegetable pulao.JPG" alt="Veg Pulao">
+            <h3>Veg Pulao</h3>
+            <p class="price">₹100.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/kerala meals.jpg" alt="kerala meals">
+            <h3>kerala meals</h3>
+            <p class="price">₹100.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/chana.png" alt="Chana-curry">
+            <h3>Chana-curry</h3>
+            <p class="price">₹75.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item veg">
+            <img src="image/lemon rice.jpg" alt="lemon rice">
+            <h3>Lemon rice</h3>
+            <p class="price">₹60.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg">
+            <img src="image/chicken biryani.jpeg" alt="Chicken Biryani">
+            <h3>Chicken Biryani</h3>
+            <p class="price">₹250.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg">
+            <img src="image/chicken fry.jpg" alt="chicken fry">
+            <h3>chicken fry</h3>
+            <p class="price">₹120.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg" >
+            <img src="image/chicken-curry-recipe.webp" alt="chicken-curry-recipe">
+            <h3>chicken-curry-recipe</h3>
+            <p class="price">₹135.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg">
+            <img src="image/Rumali Roti.jpeg" alt="Rumali Roti">
+            <h3>Rumali Roti</h3>
+            <p class="price">₹15.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg">
+            <img src="image/Mutton Biryani.jpeg" alt="Mutton Biryani">
+            <h3>Mutton Biryani</h3>
+            <p class="price">₹300.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg">
+            <img src="image/Mutton Curry.jpeg" alt="Mutton Curry">
+            <h3>Mutton Curry</h3>
+            <p class="price">₹250.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg">
+            <img src="image/Appolo Fish.jpeg" alt="Appolo Fish">
+            <h3>Appolo Fish</h3>
+            <p class="price">₹300.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg">
+            <img src="image/fish fry.jpg" alt="fish fry">
+            <h3>fish fry</h3>
+            <p class="price">₹120.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item nonveg">
+            <img src="image/prawn.jpg" alt="Fish Fry">
+            <h3>Prawn Curry</h3>
+            <p class="price">₹120.00</p>
+            <button onclick="addToCart(this)" class="add-btn">Add to Cart</button>
+        </div>
+    </section>
+    <script src="js/order.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

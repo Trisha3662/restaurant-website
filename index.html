@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Food Order- Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        function validateEmail() {
+            const emailInput = document.getElementById("email");
+            const email = emailInput.value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            
+            alert("You have subscribed successfully!");
+            return true;
+        }
+    </script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FFC107',secondary:'#000000'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">  
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="top-banner">Order Online Now</div>
+
+    <header>
+        <div class="logo">
+            <img src="image/logo.webp" alt="LTS">
+            <span>Home Food <br>Order</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#About">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="#contact">Contact</a></li> 
+            </ul>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="reservation.html"><button class="btn reservation">Reservations</button></a>
+            <a href="order.html" class="btn order">Order Online</a>
+        </div>
+
+        <div class="icons">
+            <i class='bx bxs-user-circle' style="font-size: 25px;"></i>
+            <a href="login.html" class="login"><i class="fas fa-user-circle"></i> Log In</a>
+            <a href="cart.html" class="cart-icon">
+            🛒 <span id="cart-count">0</span>
+           </a>
+        </div>
+    </header>
+
+    <section class="hero-video">
+        <video src="image/front1.mp4" autoplay loop muted playsinline></video>
+        <div class="video-overlay">
+            <h1 class="text-6xl font-bold mb-6 text-white">"Eat Fresh <br>Feel Fresh"</h1>
+            <h2>LST - The Culture Of Indian Foods</h2>
+            <a href="menu.html" class="btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <section id="About">
+        <div class="hero-section min-h-screen flex items-center">
+            <div class="container mx-auto px-6 py-20 w-full">
+                <div class="flex justify-between items-start">
+                    <div class="max-w-2xl text-white">
+                        <h1 class="text-6xl font-bold mb-2 text-primary">Fresh.</h1>
+                        <h1 class="text-6xl font-bold mb-2 text-white">Authentic.</h1>
+                        <h1 class="text-6xl font-bold mb-6 text-white">Simple.</h1>
+                        <p class="text-xl mb-6">We're bringing flavors from the south - to your plate.</p>
+                        <div class="wave mb-8"></div>
+                        <p class="text-lg mb-6 opacity-90 max-w-xl">
+                            Experience the authentic taste of traditional Asian cuisine, carefully crafted with premium ingredients and time-honored techniques. Our chefs bring generations of culinary expertise to create dishes that honor heritage while delighting modern palates.
+                        </p>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="rounded-full bg-black bg-opacity-30 p-4 border-2 border-primary">
+                            <div class="rounded-full border-2 border-white p-6 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="font-['Pacifico'] text-2xl text-primary mb-1">lst</div>
+                                    <div class="text-white text-xs tracking-widest">AUTHENTIC • FRESH • SIMPLE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Our Specialties</h2>
+        <p class="text-lg max-w-2xl mx-auto opacity-80">Discover our most beloved dishes, crafted with care and authentic ingredients</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <div class="item bg-gray-900 rounded overflow-hidden">
+        <img src="image/Dosa.jpg" class="h-64 w-full object-cover">
+
+        <div class="p-6">
+            <h3>Dosa</h3>
+            <p>Golden, crispy</p>
+
+            <p class="price">₹65</p>
+
+          <button class="add-btn" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="item bg-gray-900 rounded overflow-hidden">
+        <img src="image/Mushroom Biriyani.jpeg" class="h-64 w-full object-cover">
+
+        <div class="p-6">
+            <h3>Mushroom Biriyani</h3>
+            <p>Delicious mushroom rice</p>
+
+            <p class="price">₹180</p>
+
+            <button class="add-btn" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="item bg-gray-900 rounded overflow-hidden">
+        <img src="image/Mutton Biryani.jpeg" class="h-64 w-full object-cover">
+
+        <div class="p-6">
+            <h3>Mutton Biryani</h3>
+            <p>Rich and spicy</p>
+
+            <p class="price">₹300</p>
+
+            <button class="add-btn" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+</div>
+
+    <div class="bg-primary text-black py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-4xl font-bold mb-4">Join Us for an Authentic Experience</h2>
+                    <p class="text-lg mb-6">Subscribe to receive special offers and updates about our seasonal menus.</p>
+                    <div class="flex">
+                        <input type="email" id="email" placeholder="Your email address" class="px-4 py-3 w-full max-w-md border-none !rounded-l-button focus:outline-none">
+                        <button onclick="return validateEmail()" class="bg-black text-white px-6 py-3 !rounded-r-button whitespace-nowrap font-medium">Subscribe</button>
+                    </div>
+                </div>
+                <div class="md:w-1/3">
+                    <div class="bg-black rounded-lg p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Opening Hours</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between">
+                                <span>Monday - Thursday</span>
+                                <span>11:00 AM - 10:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Friday - Saturday</span>
+                                <span>11:00 AM - 11:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Sunday</span>
+                                <span>12:00 PM - 9:00 PM</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <a href="reservation.html"><button class="w-full bg-primary text-black py-3 !rounded-button whitespace-nowrap font-medium">Reserve Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact">
+        <footer class="bg-black text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="font-['Pacifico'] text-3xl text-primary mb-4">lst</div>
+                        <p class="max-w-xs opacity-80">Bringing authentic Asian flavors to your table since 2010.</p>
+                        <div class="flex space-x-4 mt-6">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-black transition">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-black transition">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-black transition">
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                            <ul class="space-y-2">
+                                <li><a href="menu.html" class="opacity-80 hover:opacity-100 hover:text-primary">Menu</a></li>
+                                <li><a href="reservation.html" class="opacity-80 hover:opacity-100 hover:text-primary">Reservations</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">Contact</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center opacity-80">
+                                    <i class="ri-map-pin-line mr-2"></i>
+                                    <span>123 Ettimadai, Coimbatore</span>
+                                </li>
+                                <li class="flex items-center opacity-80">
+                                    <i class="ri-phone-line mr-2"></i>
+                                    <span>123-456-7890</span>
+                                </li>
+                                <li class="flex items-center opacity-80">
+                                    <i class="ri-mail-line mr-2"></i>
+                                    <span>info@asianflavors.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">We Accept</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded">
+                                    <i class="ri-visa-line text-lg"></i>
+                                </div>
+                                <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded">
+                                    <i class="ri-mastercard-line text-lg"></i>
+                                </div>
+                                <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded">
+                                    <i class="ri-paypal-line text-lg"></i>
+                                </div>
+                                <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded">
+                                    <i class="ri-apple-fill text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-12 pt-8 text-center opacity-60 text-sm">
+                    <p>© 2025 Asian Flavors. All rights reserved. | Thursday, April 3, 2025</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="js/order.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
